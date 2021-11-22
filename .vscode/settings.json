@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.css": "css",
+        "vector": "cpp",
+        "string": "cpp"
+    }
+}

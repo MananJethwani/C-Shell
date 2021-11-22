@@ -1,7 +1,14 @@
-#include <stdio.h>
-#include "main.h"
+#include <bits/stdc++.h>
 
-int main () {
+using namespace std;
+
+#include "main.h"
+#include "shell.h"
+
+int main()
+{
+    Shell shell;
+    cout << shell.prompt();
     while(true) {
         
     }
