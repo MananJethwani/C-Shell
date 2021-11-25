@@ -2,6 +2,7 @@
     "files.associations": {
         "*.css": "css",
         "vector": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "ostream": "cpp"
     }
 }

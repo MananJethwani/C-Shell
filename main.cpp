@@ -8,9 +8,6 @@ using namespace std;
 int main()
 {
     Shell shell;
-    cout << shell.prompt();
-    while(true) {
-        
-    }
+    cout << shell.prompt()<<endl;
     return 0;
 }
