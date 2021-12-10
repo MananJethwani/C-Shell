@@ -23,20 +23,7 @@ Shell::Shell()
 string Shell::prompt()
 {
     return username + "@" + hostname + ":" + (PWD == initialDirectory ? "~" : "/" + convertToString(PWD, "/"));
-}
-
-// void Shell::readCommand() {
-//     // separators: | && ||
-//     string command;
-//     getline(cin, command);
-//     stack<string> st;
-//     int l = command.size();
-//     for (int i = 0; i < l; i++)
-//     {
-//         char ch = command[i];
-//         if (command)
-//     }
-// }    
+}   
 
 /*
 References:

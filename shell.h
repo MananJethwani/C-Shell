@@ -9,14 +9,18 @@
     class Shell
     {
     private:
-        string username, hostname;
         vector<string> initialDirectory, PWD, prevDirectory;
 
     public:
+        string username, hostname;
         Shell();
-        string prompt();
+        struct runOutput {
+            string output;
+            int exitCode;
+        };
         void readCommand();
-        string runCommand(string);
-        string cd(string);
+        string prompt();
+        runOutput runCommand(string);
+        runOutput cd(string);
     };
 #endif

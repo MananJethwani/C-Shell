@@ -2,10 +2,10 @@
 
 using namespace std;
 
-#include "shell.h";
-#include "util.h";
+#include "shell.h"
+#include "util.h"
 
-string Shell::cd(string arg) {
+Shell::runOutput Shell::cd(string arg) {
     auto temp1 = PWD;
     auto temp = PWD;
     string ret = "";
@@ -22,13 +22,16 @@ string Shell::cd(string arg) {
     strcpy(path, arg.c_str());
     if (chdir(path) == -1) {
         free(path);
-        return "Invalid Path";
+        return {"Invalid Path\n", 1};
     }
     getcwd(path, len);
     PWD = split(convertToString(path), "/", true);
     free(path);
     prevDirectory = temp1;
-    return ret;
+    if (ret != "") {
+        ret += '\n';
+    } 
+    return {ret, 0};
 }
 
 /*
