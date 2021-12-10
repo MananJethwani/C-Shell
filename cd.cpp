@@ -6,6 +6,7 @@ using namespace std;
 #include "util.h"
 
 Shell::runOutput Shell::cd(string arg) {
+    // cout << "arg = " << arg << endl;
     auto temp1 = PWD;
     auto temp = PWD;
     string ret = "";
@@ -20,7 +21,8 @@ Shell::runOutput Shell::cd(string arg) {
     }
     char *path = (char *)malloc(len);
     strcpy(path, arg.c_str());
-    if (chdir(path) == -1) {
+    if (chdir(path) != 0)
+    {
         free(path);
         return {"Invalid Path\n", 1};
     }
