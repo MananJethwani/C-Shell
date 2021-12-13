@@ -8,8 +8,11 @@ using namespace std;
 int main()
 {
     Shell shell;
-    cout << shell.prompt()<<endl;
-    shell.readCommand();
-    cout << shell.prompt()<<endl;
+    shell.STDIN_COPY = dup(0);
+    shell.STDOUT_COPY = dup(1);
+    while (true) {
+        cout << shell.prompt() << " ";
+        shell.readCommand();
+    }
     return 0;
 }

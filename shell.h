@@ -10,17 +10,23 @@
     {
     private:
         vector<string> initialDirectory, PWD, prevDirectory;
+        string username, hostname;
 
     public:
-        string username, hostname;
+        int STDIN_COPY, STDOUT_COPY;
         Shell();
-        struct runOutput {
-            string output;
-            int exitCode;
-        };
+        // struct runOutput {
+        //     string output;
+        //     int exitCode;
+        // };
         void readCommand();
         string prompt();
-        runOutput runCommand(string);
-        runOutput cd(string);
+        int runCommand(string);
+        int execute_cd(vector<string>);
+        int execute_pwd();
+        int execute_echo(vector<string>);
+        int setEnv(vector<string>);
+        int getEnv(vector<string>);
+        int unsetEnv(vector<string>);
     };
 #endif

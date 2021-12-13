@@ -7,7 +7,7 @@ using namespace std;
 // d contains all the delimeters
 // flag will be true if we don't want to take first character
 // useful when given '/' in paths 
-vector<string> split(string s, string d, bool flag = false)
+vector<string> split(string s, string d, bool flag)
 {
     vector<string> ret;
     int i = 0;
@@ -20,9 +20,6 @@ vector<string> split(string s, string d, bool flag = false)
     {
         if (i == s.size() || s.substr(i, d.size()) == d)
         {
-            if (i == s.size() && s.substr(last, i - last) == "") {
-                continue;
-            }
             ret.emplace_back(s.substr(last, i - last));
             last = i + 1;
         }

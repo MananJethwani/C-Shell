@@ -16,7 +16,7 @@ using namespace std;
 // template<typename Head, typename... Tail> void dbg_out(Head H, Tail... T);
 // #define dbg(...) cerr << "[" << #__VA_ARGS__ << "]:", debug = true, dbg_out(__VA_ARGS__), debug = false
 
-vector<string> split(string, string, bool);
+vector<string> split(string, string, bool flag = false);
 string convertToString(char *);
 string convertToString(const vector<string> &v, const string delimiter);
 char * convertToCharArray(string);
