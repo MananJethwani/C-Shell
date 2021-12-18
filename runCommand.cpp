@@ -1,5 +1,4 @@
-#include<bits/stdc++.h>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 #include "shell.h"
@@ -84,6 +83,8 @@ int Shell::runCommand(string command) {
         return this->getEnv(commands);
     } else if (commands[0] == "unsetEnv") {
         return this->unsetEnv(commands);
+    } else if (commands[0] == "ls") {
+        return this->execute_ls(commands);
     }
     else if (commands[0] == "") {}
     assert(false);

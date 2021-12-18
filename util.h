@@ -20,5 +20,7 @@ vector<string> split(string, string, bool flag = false);
 string convertToString(char *);
 string convertToString(const vector<string> &v, const string delimiter);
 char * convertToCharArray(string);
+vector<string> extractFlags(vector<string>);
+vector<string> extractArgs(vector<string>);
 
 #endif

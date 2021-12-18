@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 #include "util.h"
@@ -57,11 +56,32 @@ string convertToString(const vector<string> &v, const string delimiter)
 }
 
 char * convertToCharArray(string s) {
-    char ch[s.length() + 1];
-    for(int i=0;i<s.length();i++) {
-        ch[i] = s[i];
-    }
-    ch[s.length()] = '\0';
-    char *x = ch;
+    char* x = new char[len];
+    strcpy(x, s.c_str());
     return x;
+}
+
+vector<string> extractFlags(vector<string> vec) {
+    vector<string> flags;
+    for (int i = 1; i < vec.size(); i++) {
+        auto &ss = vec[i];
+        if (ss.empty()) continue;
+        if (ss[0] == '-') {
+            ss.erase(ss.begin());
+            flags.push_back(ss);
+        }
+    }
+    return flags;
+}
+
+vector<string> extractArgs(vector<string> vec) {
+    vector<string> args;
+    for (int i = 1; i < vec.size(); i++) {
+        auto &ss = vec[i];
+        if (ss.empty()) continue;
+        if (ss[0] != '-') {
+            args.push_back(ss);
+        }
+    }
+    return args;
 }

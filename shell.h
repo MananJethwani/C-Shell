@@ -28,5 +28,6 @@
         int setEnv(vector<string>);
         int getEnv(vector<string>);
         int unsetEnv(vector<string>);
+        int execute_ls(vector<string>);
     };
 #endif

@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 #include "shell.h"
@@ -22,7 +21,7 @@ Shell::Shell()
 
 string Shell::prompt()
 {
-    return username + "@" + hostname + ":" + (PWD == initialDirectory ? "~" : "/" + convertToString(PWD, "/"));
+    return username + "@" + hostname + ":" + (PWD == initialDirectory ? "~" : "/" + convertToString(PWD, "/") + "/> ");
 }   
 
 /*
